@@ -1,28 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Editor de Roupas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Roupas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Editor de Roupas</h1>
+    <header>
+        <h1>Loja de Roupas</h1>
+    </header>
+    
+    <section class="produto">
+        <img src="imagem_roupa1.jpg" alt="Roupa 1">
+        <h2>Roupa 1</h2>
+        <p>Descrição da Roupa 1.</p>
+        <p>Preço: R$<span id="preco1">100.00</span></p>
+        <button onclick="alterarPreco('preco1')">Alterar Preço</button>
+    </section>
 
-    <!-- Formulário para editar valores -->
-    <h2>Editar Valores</h2>
-    <form>
-        <label for="nome">Nome da Roupa:</label>
-        <input type="text" id="nome" name="nome" value="Roupa Exemplo"><br><br>
+    <section class="produto">
+        <img src="imagem_roupa2.jpg" alt="Roupa 2">
+        <h2>Roupa 2</h2>
+        <p>Descrição da Roupa 2.</p>
+        <p>Preço: R$<span id="preco2">80.00</span></p>
+        <button onclick="alterarPreco('preco2')">Alterar Preço</button>
+    </section>
 
-        <label for="preco">Preço:</label>
-        <input type="text" id="preco" name="preco" value="100.00"><br><br>
+    <!-- Adicione mais produtos aqui conforme necessário -->
 
-        <input type="submit" value="Salvar Valores">
-    </form>
-
-    <!-- Formulário para fazer upload de imagens -->
-    <h2>Postar Foto</h2>
-    <form enctype="multipart/form-data" action="upload.php" method="post">
-        <input type="file" name="imagem" accept="image/*"><br><br>
-        <input type="submit" value="Enviar Imagem">
-    </form>
+    <script>
+        function alterarPreco(id) {
+            var novoPreco = prompt("Digite o novo preço:");
+            if (novoPreco !== null) {
+                document.getElementById(id).textContent = novoPreco;
+            }
+        }
+    </script>
 </body>
 </html>
